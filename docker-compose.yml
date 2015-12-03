@@ -1,0 +1,15 @@
+# minecraft-server
+server:
+  build: .
+  ports:
+    - "25565:25565"
+  volumes:
+    - /data/world
+  volumes_from:
+    - world
+  environment:
+    VIRTUAL_HOST: map.minecraft-sushi.club
+    VIRTUAL_PORT: "8123"
+# data-container
+world:
+  build: ./data-container
